@@ -1,4 +1,4 @@
-## Integração do Webpack com Typescript
+## Integração Webpack & Typescript
 #### Integração
 - Typescript
 - Bootstrap
