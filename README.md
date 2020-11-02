@@ -8,7 +8,7 @@ yarn install -D typescript @types/node dotenv @types/dotenv
 yarn tsc --init
 ```
 > tsconfig.json
-```json
+```js
 {
   "compilerOptions": {
     "target": "es5",                          /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', or 'ESNEXT'. */
@@ -25,7 +25,14 @@ yarn tsc --init
     "rootDir": "./",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
     "removeComments": true,                /* Do not emit comments to output. */
     "baseUrl": "./",                       /* Base directory to resolve non-absolute module names. */
-    // "paths": {},                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
+    "paths": {
+      "@config/*":[
+        "./src/config/*"
+      ],
+      "@services/*": [
+        "./src/services"
+      ]
+    },                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
     // "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. */
     // "typeRoots": [],                       /* List of folders to include type definitions from. */
     // "types": [],                           /* Type declaration files to be included in compilation. */
@@ -76,7 +83,7 @@ module.exports = {
 };
 ```
 > Script build webpack package.json
-```json
+```js
 "scripts": {
   "build": "webpack"
 }
@@ -106,7 +113,7 @@ module.exports = {
 };
 ```
 > Script dev package.json
-```json
+```js
 {
   "scripts": {
     "dev": "webpack-dev-server"
@@ -198,7 +205,7 @@ import './sass/style.scss';
 ```bash
 yarn add serve
 ```
-```json
+```js
 {
   "scripts": {
     "start": "serve ./dist/index.html"
