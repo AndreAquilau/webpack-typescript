@@ -1,4 +1,10 @@
 ## Integração do Webpack com Typescript
+#### Integração
+- Typescript
+- Bootstrap
+- JQuery
+- Babel
+- Sass
 
 #### Starting Typescript
 ```bash
